@@ -55,7 +55,7 @@ public class UserResource {
 	public ResponseEntity<Void> update(@RequestBody UserDTO objDto, @PathVariable String id) {
 		User obj = service.fromDTO(objDto);
 		obj.setId(id);
-		obj = service.insert(obj);
+		obj = service.update(obj);
 		return ResponseEntity.noContent().build();
 	}
 }
